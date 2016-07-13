@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+h1 {
+  color: blue;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h1, h2 {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+p {
+  font-family: "Gentium Plus", Georgia, Times, serif;
+  line-height: 1.5em;
+}
+
+em {
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.content a {
+  color: red;
+  text-decoration: none;
+}
+
+.content a:visited {
+  color: yellow;
+}
+
+.content ul {
+	padding-left: 40px;
+}
+
+.content li {
+	list-style-type: disc;
+	outline: solid 1px red;
+	padding: 10px 5px 2px 5px;
+}
+
+.rather-reddish {
+	outline: solid 1px green;
+  color: red;
+}
+
+.dropcap {
+	font-size: 3em;
+}
+
+#my-name {
+	font-size: 1.75em;
+}
+
+nav {
+	background-color: black;
+	position: relative;
+}
+
+nav li {
+	display: inline-block;
+	outline: solid 1px yellow;
+	width: 80px;
+}
+
+nav a {
+	outline: solid 1px red;
+	color: white;
+	text-decoration: none;
+}
+
+.top-stuff {
+
+}
+
+.bottom-stuff {
+	color: gray;
+	font-size: .8em;
+}
+
+.outer-box {
+	border: solid 3px green;
+	height: 200px;
+	position: relative;
+	width: 300px;
+}
+
+.inner-box {
+	border: solid 1px blue;
+	height: 50px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 50px;
+}
+
+.login {
+	width: auto;
+	position: absolute;
+	right: 3px;
+}
