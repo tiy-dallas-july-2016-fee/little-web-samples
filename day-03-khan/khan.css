@@ -99,3 +99,50 @@ h1 .khan {
 	text-align: center;
 	text-decoration: none;
 }
+
+.stats {
+	padding: 20px 0 0 0;
+	text-align: center;
+}
+
+.week-stats {
+	display: inline-block;
+	width: 200px;
+	text-transform: uppercase;
+}
+
+.week {
+	font-weight: bold;
+}
+
+.week, .energy-points {
+	color: #888;
+}
+
+.last-week .week {
+	color: #000;
+}
+
+.stats-value {
+	border-radius: 10px;
+	color: #FFF;
+	display: inline-block;
+	font-size: 4em;
+	margin: 30px 0 15px 0;
+	padding: 10px 15px;
+}
+
+.stats-value .operator {
+	font-size: 2rem;
+	position: relative;
+	bottom: 10px;
+	right: 3px;
+}
+
+.two-weeks-ago .stats-value {
+	background-color: rgb(133, 181, 200);
+}
+
+.last-week .stats-value {
+	background-color: rgb(12, 109, 146);
+}
