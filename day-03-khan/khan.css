@@ -56,6 +56,10 @@ body {
   width: 768px;
 }
 
+/* ================================================= */
+/* Close to earning */
+/* ================================================= */
+
 header {
   background-color: rgb(39, 48, 63);
   color: #FFF;
@@ -99,6 +103,11 @@ h1 .khan {
 	text-align: center;
 	text-decoration: none;
 }
+
+/* ================================================= */
+/* Stats */
+/* ================================================= */
+
 
 .stats {
 	padding: 20px 0 0 0;
@@ -145,4 +154,51 @@ h1 .khan {
 
 .last-week .stats-value {
 	background-color: rgb(12, 109, 146);
+}
+
+/* ================================================= */
+/* Close to earning */
+/* ================================================= */
+
+.close-to-earning {
+	border-top: solid 1px #EEE;
+	margin: 20px auto 0 auto;
+	padding: 30px 0 0 0;
+	width: 600px;
+}
+
+.close-to-earning h2 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0 0 20px 0;
+	text-transform: uppercase;
+}
+
+.badge {
+	background-color: rgb(175, 44, 28);
+	border: solid 15px rgb(236, 109, 75);
+	border-radius: 100%;
+	color: rgb(249, 227, 210);
+	display: inline-block;
+	font-weight: bold;
+	height: 80px;
+	font-size: 4.5em;
+	line-height: 1.15em;
+	width: 80px;
+}
+
+.badge-talk {
+	display: inline-block;
+	padding: 0 0 0 30px;
+	text-align: left;
+	width: 270px;
+}
+
+.badge-talk p {
+	margin: 5px 0;
+}
+
+.badge-talk .second {
+	font-style: italic;
+	font-weight: bold;
 }
