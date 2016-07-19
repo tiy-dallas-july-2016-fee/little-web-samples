@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+	background-color: rgb(244, 244, 244);
+}
+
+
+
+.container {
+	margin: 0 auto;
+	width: 80%;
+}
+
+header {
+	background-color: rgb(53, 155, 180);
+	overflow: auto;
+	padding: 17px 0;
+}
+
+header .header-image {
+	float: left;
+	width: 50%;
+}
+
+header .header-image img {
+	width: 150px;
+}
+
+header nav {
+	float: left;
+	width: 50%;
+}
+
+
+.main-content {
+	float: left;
+	width: 80%;
+}
+
+.main-content .post {
+	background-color: #FFF;
+	margin: 40px 0;
+}
+
+.sidebar {
+	float: left;
+	width: 20%;
+}
+
+footer {
+	clear: left;
+	color: #FFF;
+}
+
+footer div {
+	min-height: 75px;
+}
+
+.level-1 {
+	background-color: rgb(231, 247, 252);
+}
+
+.level-2 {
+	background-color: rgb(34, 52, 66);
+}
+
+.level-3 {
+	background-color: rgb(20, 40, 55);
+}
