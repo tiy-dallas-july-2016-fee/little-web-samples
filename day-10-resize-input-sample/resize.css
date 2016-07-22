@@ -1,0 +1,48 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #000;
+}
+
+.container {
+  outline: dashed 2px red;
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 50px 0;
+}
+
+input, button {
+  border: none;
+  border-radius: 3px;
+  font-size: 1.1em;
+  padding: 20px 5%;
+}
+
+input {
+  margin-right: 2%;
+  width: 55%;
+}
+
+button {
+  width: 33%;
+}
+
+@media (max-width: 619px) {
+  .container {
+    width: 88%;
+  }
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  input {
+    width: 90%;
+  }
+
+
+}
