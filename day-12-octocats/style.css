@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 0.85em;
+}
+
+.octodex {
+	/* just a little space at the top */
+	margin-top: 20px;
+}
+
+.octocat {
+	/* three columns, float left and width of 33% */
+	float: left;
+	margin: 0 1%;
+	width: 31.333333%;
+}
+
+.octocat > a > img {
+	border: solid 1px #CCC;
+
+	/* turning it block so I can center it */
+	display: block;
+	margin: 0 auto;
+
+	/* Images are too big for the container, so constraining them */
+	/* they also aren't quite 100% in the screenshot, so a little smaller */
+	width: 97%;
+}
+
+.image-footer {
+	border-bottom: solid 1px #CCC;
+	padding-bottom: 7px;
+
+	/* it's child elements are all floated so it has no height, so fixing that */
+	overflow: auto;
+
+	/* space between footer and big image */
+	margin-top: 10px;
+}
+
+.image-number {
+	color: #CCC;
+
+	padding-top: 9px;
+
+	/* want it on the left, with the authors on the right */
+	float: left;
+}
+
+.image-number:before {
+	/* adding the octothorpe before so I don't have to change the HTML */
+	content: '#';
+}
+
+.image-caption {
+	color: #999;
+
+	/* want it on the right with the # on the left */
+	float: right;
+}
+
+.image-caption a {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.authors, .authors li {
+	/* the ul and li for the authors is block so is starting a new line, so change that */
+	display: inline;
+}
+
+.authors img {
+	/* these images are way too big */
+	width: 30px;
+
+	/* vertically align the images with the text around them */
+	vertical-align: middle;
+}
