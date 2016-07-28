@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>Single-Select Menu</title>
+
+    <style>
+
+    ul {
+      border: solid 1px #000;
+      margin: 0 auto;
+      padding-left: 0;
+      width: 250px;
+    }
+
+    li {
+      background-color: #DDD;
+      list-style-type: none;
+      margin: 5px 0;
+      padding: 5px 10px;
+    }
+
+    .selected {
+      border-left: solid 4px red;
+      padding-left: 6px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <ul id="the-list">
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+    </ul>
+
+
+    <script>
+
+      var theUL = document.querySelector('#the-list');
+
+      theUL.addEventListener('click', function(evt) {
+
+        //We only want to select when we actually click on a list item, so exit
+        //  if we hit the parent list.
+        if (evt.target.tagName !== 'LI') {
+          return;
+        }
+
+        var currentlySelectedLI = document.querySelector('.selected');
+
+        //If there is a currently selected list item, we want to deselect it
+        //  before adding the 'selected' class to the item we are currently clicking
+        if (currentlySelectedLI !== null) {
+          currentlySelectedLI.classList.remove('selected');
+        }
+
+        //adds a selected class to the target LI
+        evt.target.classList.add('selected');
+      });
+
+      //I don't like this one as much
+      /*
+      var theUL = document.querySelector('#the-list');
+
+      var currentlySelectedLI;
+
+      theUL.addEventListener('click', function(evt) {
+
+        if (currentlySelectedLI !== undefined) {
+          currentlySelectedLI.classList.remove('selected');
+        }
+
+        currentlySelectedLI = evt.target;
+        currentlySelectedLI.classList.add('selected');
+
+      });
+      */
+
+    </script>
+
+  </body>
+
+
+
+</html>
