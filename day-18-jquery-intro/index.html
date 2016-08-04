@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Intro</title>
+
+    <style>
+      body {
+        text-align: center;
+      }
+
+      input {
+        display: block;
+        margin: 20px auto;
+      }
+
+      input, button {
+        padding: 10px;
+      }
+
+      #cool-list {
+        background-color: #EEE;
+        overflow: auto;
+        padding-left: 0;
+      }
+
+      #cool-list li {
+        background-color: rgba(0, 255, 0, 0.2);
+        border: solid 3px rgba(0, 255, 0, 1);
+        border-radius: 100%;
+        float: left;
+        height: 200px;
+        list-style-type: none;
+        margin: 20px;
+        width: 200px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+
+
+    <input id="the-number" />
+    <button id="guess-button">Guess!</button>
+    <div id="output"></div>
+    <button id="start-over" style="display: none;">start over</button>
+
+
+    <ul id="cool-list">
+      <li>Steak</li>
+      <li>Wings</li>
+      <li>Shrimp</li>
+    </ul>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
