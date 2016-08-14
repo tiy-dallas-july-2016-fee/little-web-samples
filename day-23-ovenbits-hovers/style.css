@@ -1,0 +1,135 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+.container {
+	background-color: yellow;
+	overflow: auto;
+}
+
+.box {
+	float: left;
+	height: 200px;
+	position: relative;
+}
+
+.box-1 {
+	background-color: red;
+	background-image: url(http://d36s929gmfcqwt.cloudfront.net/assets/cellucor-900-f5184e18ba82098b3fb785136068ea366452d8255e6f7d3ae12f081511ace1a3.jpg);
+	background-position: center;
+	margin: 0 1.5% 0 0;
+	width: 32.333333%;
+}
+
+.box-2 {
+	background-color: green;
+	margin: 0 1.5% 0 0;
+	width: 32.333333%;
+}
+
+.box-3 {
+	background-color: blue;
+	width: 32.333333%;
+}
+
+.overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 0;
+}
+
+.box:hover .overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlay .content {
+	bottom: 0;
+	left: 0;
+	outline: dashed 1px orange;
+	position: absolute;
+	right: 0;
+	transition: 0.2s;
+}
+
+.box:hover .content {
+	bottom: 30px;
+}
+
+.overlay h3 {
+	outline: dashed 1px yellow;
+}
+
+.overlay p {
+	outline: dashed 1px yellow;
+}
+
+.overlay .case-study {
+	border: solid 1px #FFF;
+	opacity: 0;
+	margin: 10px auto;
+	max-width: 130px;
+	padding: 10px;
+	transition: 0.2s;
+	transition-property: bottom;
+}
+
+.box:hover .case-study {
+	opacity: 1;
+}
+
+.case-study:hover {
+	background-color: #FFF;
+	color: #000;
+}
