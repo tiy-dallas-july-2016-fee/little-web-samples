@@ -1,0 +1,44 @@
+body {
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+
+#sign-in {
+  border: solid 1px #000;
+  padding: 10px;
+}
+
+input {
+  display: block;
+  padding: 5px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 3px 0;
+}
+
+button {
+  display: block;
+  margin-top: 15px;
+}
+
+
+ol {
+  border: solid 1px #DDD;
+}
+
+li {
+  clear: both;
+  border: solid 1px #DDD;
+  padding: 10px;
+}
+
+li:nth-child(odd) {
+  background-color: #EEE;
+}
+
+li button {
+  float: right;
+  margin-top: 0px;
+}

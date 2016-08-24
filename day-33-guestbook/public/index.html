@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Guestbook</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <h1>Guestbook</h1>
+
+    <div id="sign-in">
+      <label for="first-name">First Name:</label>
+      <input id="first-name" name="first-name" />
+
+      <label for="last-name">Last Name:</label>
+      <input id="last-name" name="last-name" />
+
+      <button id="sign-in-button">sign in</button>
+    </div>
+
+    <ol id="list">
+
+    </ol>
+
+    <script type="text/html" id="guest-list-template">
+      <li>
+        <%= firstName %> <%= lastName %>
+        <button data-id="<%= id %>">delete</button>
+      </li>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>GuestBook.startItYo();</script>
+
+  </body>
+
+
+</html>
