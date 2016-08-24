@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Yo, Counter App</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div id="counter-stuff">
+      <h2>Counter</h2>
+
+      <button id="increment-counter">increment</button>
+      <button id="show-count">show count</button>
+
+      <div id="counter-display"></div>
+
+    </div>
+
+    <script type="text/html" id="counter-template">
+      <div class="count-data">
+        <p>You clicked this many times: <%= count %></p>
+      </div>
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="file.js"></script>
+    <script>CounterApp.start();</script>
+  </body>
+
+
+</html>
