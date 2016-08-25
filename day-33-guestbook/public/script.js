@@ -55,6 +55,9 @@ if (window.GuestBook === undefined) window.GuestBook = {};
       url: '/api/guestbookentry/' + id,
       method: 'DELETE'
     });
+
+    //get the parent (the li) of the delete button and remove it.
+    $target.parent().remove();
   }
 
   function start() {
@@ -62,7 +65,7 @@ if (window.GuestBook === undefined) window.GuestBook = {};
 
     $('#sign-in-button').on('click', signInButtonClicked);
 
-    $('#list').on('click', deleteClicked);
+    $('#list').on('click', '.delete-button', deleteClicked);
   }
 
   GB.startItYo = start;

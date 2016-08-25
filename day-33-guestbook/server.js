@@ -32,9 +32,10 @@ app.delete('/api/guestbookentry/:id', function(req, res) {
 
   var index = data.findIndex(x => x.id == req.params.id);
 
-  console.log('deleting item with id', req.params.id, '"' + data[index].text + '"');
-
-  data.splice(index, 1);
+  if (index > -1) {
+    console.log('deleting item with id', req.params.id, '"' + data[index].firstName + '"');
+    data.splice(index, 1);
+  }
 
   res.sendStatus(204);
 });
