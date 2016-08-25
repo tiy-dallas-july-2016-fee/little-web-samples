@@ -2,16 +2,26 @@ if (window.GuestBook === undefined) window.GuestBook = {};
 
 (function(GB) {
 
-  function templateEntry(firstName, lastName, id) {
+  function templateEntry(firstName, lastName, id, hasGivenGift) {
+    console.log('has given gift', hasGivenGift);
+
+    var className = '';
+    if (hasGivenGift == 'true') {
+      className = 'has-given-gift';
+    }
+
     var templateHtml = $('#guest-list-template').html();
     var templateFunc = _.template(templateHtml);
     var html = templateFunc({
       id: id,
       firstName: firstName,
-      lastName: lastName
+      lastName: lastName,
+      className: className
     });
     $('#list').append(html);
   }
+
+  //has-given-gift
 
   function signInButtonClicked() {
     var firstName = $('#first-name').val();
@@ -23,11 +33,12 @@ if (window.GuestBook === undefined) window.GuestBook = {};
       method: 'POST',
       data: {
         firstName: firstName,
-        lastName: lastName
+        lastName: lastName,
+        hasGivenGift: false
       }
     })
     .done(function(data) {
-      templateEntry(firstName, lastName, data.guestId);
+      templateEntry(firstName, lastName, data.guestId, false);
     });
 
   }
@@ -40,7 +51,10 @@ if (window.GuestBook === undefined) window.GuestBook = {};
 
       data.forEach(function(entry) {
         console.log('entry', entry);
-        templateEntry(entry.firstName, entry.lastName, entry.id)
+        templateEntry(entry.firstName,
+          entry.lastName,
+          entry.id,
+          entry.hasGivenGift);
       });
 
     });
@@ -60,12 +74,25 @@ if (window.GuestBook === undefined) window.GuestBook = {};
     $target.parent().remove();
   }
 
+  function gaveGiftButtonClicked(evt) {
+    var $target = $(evt.target);
+    var id = $target.data('id');
+
+    $.ajax({
+      url: '/api/guestbookentry/' + id,
+      method: 'PUT'
+    });
+
+    $target.parent().toggleClass('has-given-gift');
+  }
+
   function start() {
     loadExistingData();
 
     $('#sign-in-button').on('click', signInButtonClicked);
 
     $('#list').on('click', '.delete-button', deleteClicked);
+    $('#list').on('click', '.gave-gift-button', gaveGiftButtonClicked);
   }
 
   GB.startItYo = start;

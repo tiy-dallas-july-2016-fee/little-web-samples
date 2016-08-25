@@ -27,8 +27,9 @@
     </ol>
 
     <script type="text/html" id="guest-list-template">
-      <li>
+      <li class="<%= className %>">
         <%= firstName %> <%= lastName %>
+        <button data-id="<%= id %>" class="gave-gift-button">gave gift</button>
         <button data-id="<%= id %>" class="delete-button">delete</button>
       </li>
     </script>

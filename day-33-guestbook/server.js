@@ -21,7 +21,8 @@ app.post('/api/guestbookentry', function(req, res) {
   data.push({
     id: id,
     firstName: req.body.firstName,
-    lastName: req.body.lastName
+    lastName: req.body.lastName,
+    hasGivenGift: req.body.hasGivenGift
   });
 
   res.send({ guestId: id });
@@ -40,10 +41,26 @@ app.delete('/api/guestbookentry/:id', function(req, res) {
   res.sendStatus(204);
 });
 
+app.put('/api/guestbookentry/:id', function(req, res) {
+  console.log('PUT id', req.params.id);
+
+  var index = data.findIndex(x => x.id == req.params.id);
+
+  if (index > -1) {
+    if (data[index].hasGivenGift === 'true') {
+      data[index].hasGivenGift = 'false';
+    }
+    else {
+      data[index].hasGivenGift = 'true';
+    }
+  }
+
+  res.sendStatus(204);
+});
 
 
 
 
 app.listen(5002, function() {
-  console.log('Guesbook app listening on port 5002');
+  console.log('Guestbook app listening on port 5002');
 });
