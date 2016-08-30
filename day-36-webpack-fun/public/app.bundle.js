@@ -53,7 +53,7 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	var cats = ['dave', 'henry', 'martha'];
+	var cats = ['dave', 'henry', 'martha', 'bob', 'joe'];
 
 	module.exports = cats;
 
