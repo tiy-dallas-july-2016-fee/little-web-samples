@@ -1,0 +1,42 @@
+@import 'reset';
+
+.container {
+	background-color: #FFF;
+	border: solid 1px #CCC;
+	margin: 20px auto;
+	max-width: 500px;
+	padding: 20px;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.container input {
+	border: none;
+	font-size: 1em;
+	margin-top: 10px;
+	outline: solid 1px #DDD;
+	padding: 10px 2%;
+	width: 96%;
+}
+
+.list li {
+	background-color: lightgray;
+	border: solid 2px #CCC;
+	margin: 5px 0;
+	padding: 5px;
+}
+
+.mark-completed {
+  text-decoration: line-through;
+}
+
+.edit-button, .delete-button {
+  border: 1px solid darkgray;
+  float: right;
+  margin-right: 2%;
+  padding: 5px;
+  width: 2%;
+}
