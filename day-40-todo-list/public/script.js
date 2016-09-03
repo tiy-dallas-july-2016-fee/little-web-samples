@@ -3,11 +3,12 @@ if (this.ToDo === undefined) this.ToDo = {};
 
 (function(context) {
 
-  function templateHtml(textEntered) {
+  function templateListItem(textEntered, id) {
     var templateHtml = $('#list-item-template').html();
     var templateFunc = _.template(templateHtml);
     var html = templateFunc({
-      text: textEntered
+      text: textEntered,
+      id: id
     });
     $('.list').append(html);
   }
@@ -27,9 +28,9 @@ if (this.ToDo === undefined) this.ToDo = {};
       })
       .done(function(responseDataFromTheServer) {
         //isComplete <- false
-        //id <- responseDataFromTheServer.id
+        //id <-
 
-        templateHtml(textEntered);
+        templateListItem(textEntered, responseDataFromTheServer.id);
       });
       $('#item-input').val('');
     }
@@ -42,8 +43,21 @@ if (this.ToDo === undefined) this.ToDo = {};
     .done(function(responseFromGET) {
       //responseFromGET.list
       responseFromGET.list.forEach(function(task) {
-        templateHtml(task.text);
+        templateListItem(task.text, task.id);
       });
+    });
+  }
+
+  function deleting(evt) {
+    var $target = $(evt.target);
+    var id = $target.data('id');
+
+    $.ajax({
+      url: 'api/todo/' + id,
+      method: 'DELETE'
+    })
+    .done(function() {
+      $target.parent().remove();
     });
   }
 
@@ -51,6 +65,7 @@ if (this.ToDo === undefined) this.ToDo = {};
 
     $('#item-input').on('keyup', keyUpHappened);
     getInitialData();
+    $('.list').on('click', '.delete-button', deleting);
   }
 
   context.start = start;
