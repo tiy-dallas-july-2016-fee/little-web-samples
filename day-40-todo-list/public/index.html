@@ -17,9 +17,9 @@
     </div>
 
     <script type="text/template" id="list-item-template">
-      <li>
+      <li data-id="<%= id %>" data-text="<%= text %>" class="<%= className %>">
         <%= text %>
-        <img class="delete-button" src="trash.svg" data-id="<%= id %>" />
+        <img class="delete-button" src="trash.svg" />
       </li>
 
     </script>

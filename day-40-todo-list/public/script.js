@@ -3,12 +3,19 @@ if (this.ToDo === undefined) this.ToDo = {};
 
 (function(context) {
 
-  function templateListItem(textEntered, id) {
+  function templateListItem(textEntered, id, isComplete) {
+
+    var className = '';
+    if (isComplete === 'true') {
+      className = 'mark-completed';
+    }
+
     var templateHtml = $('#list-item-template').html();
     var templateFunc = _.template(templateHtml);
     var html = templateFunc({
       text: textEntered,
-      id: id
+      id: id,
+      className: className
     });
     $('.list').append(html);
   }
@@ -30,7 +37,7 @@ if (this.ToDo === undefined) this.ToDo = {};
         //isComplete <- false
         //id <-
 
-        templateListItem(textEntered, responseDataFromTheServer.id);
+        templateListItem(textEntered, responseDataFromTheServer.id, false);
       });
       $('#item-input').val('');
     }
@@ -43,21 +50,39 @@ if (this.ToDo === undefined) this.ToDo = {};
     .done(function(responseFromGET) {
       //responseFromGET.list
       responseFromGET.list.forEach(function(task) {
-        templateListItem(task.text, task.id);
+        templateListItem(task.text, task.id, task.isComplete);
       });
     });
   }
 
   function deleting(evt) {
+    evt.stopPropagation();
+
+    console.log('deleting');
     var $target = $(evt.target);
-    var id = $target.data('id');
+    var id = $target.parent().data('id');
 
     $.ajax({
       url: 'api/todo/' + id,
       method: 'DELETE'
-    })
-    .done(function() {
-      $target.parent().remove();
+    });
+    $target.parent().remove();
+  }
+
+  function markDone(evt) {
+    console.log('mark done');
+    var $target = $(evt.target);
+    $target.addClass('mark-completed');
+    var id = $target.data('id');
+    var text = $target.data('text');
+
+    $.ajax({
+      url: 'api/todo/' + id,
+      method: 'PUT',
+      data: {
+        text: text,
+        isComplete: true
+      }
     });
   }
 
@@ -66,6 +91,7 @@ if (this.ToDo === undefined) this.ToDo = {};
     $('#item-input').on('keyup', keyUpHappened);
     getInitialData();
     $('.list').on('click', '.delete-button', deleting);
+    $('.list').on('click', 'li', markDone);
   }
 
   context.start = start;
